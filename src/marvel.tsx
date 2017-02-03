@@ -8,7 +8,7 @@ interface Props {
 export default class Marvel extends React.Component<Props, void> {
     render() {
         return <div>
-            {this.props.character.name}
+            {this.props.character ? this.props.character.name : 'no marvel'}
         </div>;
     }
 }
