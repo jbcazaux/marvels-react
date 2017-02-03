@@ -42,7 +42,7 @@ export class MarvelsInternal extends React.Component<Props, void> {
         return (<div>
             <h2>{this.props.title}</h2>
             <ul>
-                {this.props.characters.map(c => <li key={c.id}><Marvel character={c}/></li>)}
+                {this.props.characters.map(c => <Marvel key={c.id} character={c}/>)}
             </ul>
         </div>);
     }

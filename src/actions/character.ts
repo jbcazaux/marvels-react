@@ -20,7 +20,7 @@ export const fetchMarvel: ((id: number) => Promise<Character>) =
         .then(data => data.data.results)
         .then(results => results.length === 1 ? results[0] : Promise.reject('Not a single result'))
         .then((c: any) => {
-            const image = c.thumbnail ? c.thumbnail.path + c.thumbnail.extension : '';
+            const image = c.thumbnail ? c.thumbnail.path.concat('.').concat(c.thumbnail.extension) : '';
             const comics = c.comics ? c.comics.items : [];
             const series = c.series ? c.series.items : [];
             const urls = c.urls.map((url: any) => {

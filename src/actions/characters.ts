@@ -19,7 +19,7 @@ export const fetchMarvels: (() => Promise<ReadonlyArray<Character>>) =
         .then((resp: AxiosXHR<any>) => resp.data)
         .then(data => data.data.results)
         .then((characters: any[]) => characters.map(c => {
-            const image = c.thumbnail ? c.thumbnail.path + c.thumbnail.extension : '';
+            const image = c.thumbnail ? c.thumbnail.path.concat('.').concat(c.thumbnail.extension) : '';
             const comics = c.comics ? c.comics.items : [];
             const series = c.series ? c.series.items : [];
             const urls = c.urls.map((url: any) => {
