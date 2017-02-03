@@ -29,27 +29,30 @@ export default class AxiosProvider {
     }
 
     static authUrlWithTimestamp(url: string, ts: number): string {
-        let params = '?';
-        params += this.ts(ts);
-        params += '&';
-        params += this.apiKey();
-        params += '&';
-        params += this.hash(ts);
+        const params = '?'
+            .concat(this.ts(ts))
+            .concat('&')
+            .concat(this.apiKey())
+            .concat('&')
+            .concat(this.hash(ts));
 
-        return url + params;
+        return url.concat(params);
+    }
+
+    static getTimestampInSeconds() {
+        return Math.floor((new Date()).getTime() / 1000);
     }
 
     private static ts(ts: number): string {
         return 'ts=' + ts;
     }
+
     private static apiKey(): string {
         return 'apikey=' + this.API_PUBLIC;
     }
+
     private static hash(ts: number): string {
         const concat = ts + this.API_PRIVATE + this.API_PUBLIC;
         return 'hash=' + Md5.hashStr(concat);
-    }
-    static getTimestampInSeconds() {
-        return Math.floor((new Date()).getTime() / 1000);
     }
 }
