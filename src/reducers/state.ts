@@ -1,6 +1,6 @@
-import Marvel from '../model/marvel';
+import Character from '../model/character';
 
 export interface State {
-    readonly marvels: ReadonlyArray<Marvel>;
-    readonly marvel: Marvel;
+    readonly marvels: ReadonlyArray<Character>;
+    readonly marvel: Character;
 }
