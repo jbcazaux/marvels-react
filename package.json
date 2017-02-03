@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --progress",
-    "build": "webpack --verbose"
+    "build": "webpack --verbose",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/axios": "0.9.35",
     "@types/es6-shim": "0.31.32",
+    "@types/jest": "18.1.1",
     "@types/react": "15.0.6",
     "@types/react-bootstrap": "0.0.44",
     "@types/react-dom": "0.14.22",
@@ -25,12 +27,15 @@
     "es6-shim": "0.35.3",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "html-webpack-plugin": "2.28.0",
+    "jest": "18.1.0",
+    "react-addons-test-utils": "15.4.2",
     "source-map-loader": "0.1.6",
+    "ts-jest": "18.0.2",
     "ts-loader": "2.0.0",
     "tslint": "4.4.2",
     "typescript": "2.1.5",
     "webpack": "2.2.1",
-    "webpack-dev-server": "2.1.0-beta.9"
+    "webpack-dev-server": "2.2.1"
   },
   "dependencies": {
     "axios": "0.15.3",
@@ -39,6 +44,18 @@
     "react-dom": "15.4.2",
     "react-redux": "5.0.2",
     "redux": "3.6.0",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "ts-md5": "1.2.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx)$"
   }
 }
