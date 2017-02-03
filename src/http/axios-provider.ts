@@ -11,11 +11,11 @@ export default class AxiosProvider {
 
     private static createInstance() {
         axios.defaults.baseURL = this.BASE_URL;
-        axios.interceptors.request.use(
+        this._axios = axios.create({});
+        this._axios.interceptors.request.use(
             config => Object.assign(config, {url: this.authUrl(config.url)}),
             error => Promise.reject(error)
         );
-        this._axios = axios.create({});
         return this._axios;
     }
 

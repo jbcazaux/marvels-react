@@ -23,7 +23,7 @@ export type ThunkActionCreator<R> = (...args: any[]) => ThunkAction2<R>;
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="marvels" component={Marvels}/>
+            <Route path="marvels" component={() => <Marvels title="Liste des super héros"/>}/>
             <Route path="marvels/:id" component={Marvel}/>
             <Route path="*" component={NotFound}/>
         </Router>

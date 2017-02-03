@@ -1,7 +1,7 @@
 import Character from '../model/character';
 
 export interface State {
-    readonly marvels: ReadonlyArray<Character>;
-    readonly marvel: Character;
+    readonly characters: ReadonlyArray<Character>;
+    readonly character: Character;
     readonly routing: any;
 }
