@@ -17,12 +17,15 @@ export const fetchMarvels: (() => Promise<ReadonlyArray<Character>>) =
     () => AxiosProvider.axios()
         .get(CHARACTERS_URL)
         .then((resp: AxiosXHR<any>) => resp.data)
-        .then((data) => data.data.results)
+        .then(data => data.data.results)
         .then((characters: any[]) => characters.map(c => {
             const image = c.thumbnail ? c.thumbnail.path + c.thumbnail.extension : '';
             const comics = c.comics ? c.comics.items : [];
             const series = c.series ? c.series.items : [];
-            return new Character(c.id, c.name, c.description, image, c.resourceURI, comics, series);
+            const urls = c.urls.map((url: any) => {
+                return {type: url.type, url: url.url};
+            });
+            return new Character(c.id, c.name, c.description, image, comics, series, urls);
         }));
 
 export const getMarvels: ThunkActionCreator<Promise<void>> =

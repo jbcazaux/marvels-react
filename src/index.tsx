@@ -8,9 +8,8 @@ import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux';
 import {State} from './reducers/state';
 import {reducer} from './reducers/index';
 import {Marvels} from './marvels';
-
-import Marvel from './marvel';
 import {NotFound} from './not-found';
+import {MarvelDetail} from './marvel-detail';
 
 let middlewares: Middleware[] = [routerMiddleware(browserHistory), thunk];
 
@@ -24,7 +23,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Route path="marvels" component={() => <Marvels title="Liste des super héros"/>}/>
-            <Route path="marvels/:id" component={Marvel}/>
+            <Route path="marvels/:id" component={MarvelDetail}/>
             <Route path="*" component={NotFound}/>
         </Router>
     </Provider>,
