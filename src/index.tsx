@@ -7,9 +7,9 @@ import {browserHistory, Route, Router} from 'react-router';
 import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux';
 import {State} from './reducers/state';
 import {reducer} from './reducers/index';
-import {Marvels} from './marvels';
+import {Marvels} from './components/marvels';
 import {NotFound} from './not-found';
-import {MarvelDetail} from './marvel-detail';
+import {MarvelDetail} from './components/marvel-detail';
 
 let middlewares: Middleware[] = [routerMiddleware(browserHistory), thunk];
 

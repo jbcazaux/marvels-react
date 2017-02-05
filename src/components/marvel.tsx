@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Character} from './model/character';
+import {Character} from '../model/character';
 import {Link} from 'react-router';
 import ExtLink from './ext-link';
 

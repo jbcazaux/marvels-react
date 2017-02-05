@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Marvel from './marvel';
 import {connect} from 'react-redux';
-import {Character} from './model/character';
-import {State} from './reducers/state';
-import {getMarvel} from './actions/character';
+import {Character} from '../model/character';
+import {State} from '../reducers/state';
+import {getMarvel} from '../actions/character';
 
 interface OwnProps {
     readonly params?: { id: number };

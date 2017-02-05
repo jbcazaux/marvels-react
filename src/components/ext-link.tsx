@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Character} from './model/character';
+import {Character} from '../model/character';
 
 interface Props {
     readonly url: Character.Url;
