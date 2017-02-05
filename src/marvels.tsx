@@ -41,9 +41,9 @@ export class MarvelsInternal extends React.Component<Props, void> {
     render() {
         return (<div>
             <h2>{this.props.title}</h2>
-            <ul>
+            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                 {this.props.characters.map(c => <Marvel key={c.id} character={c}/>)}
-            </ul>
+            </div>
         </div>);
     }
 }

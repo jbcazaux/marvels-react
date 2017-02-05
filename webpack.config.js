@@ -52,14 +52,14 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/,
-                loader: 'file',
+                loader: 'file-loader',
                 query: {
                     name: '[name].[hash].[ext]'
                 }
             },
             {
                 test: /\.ico$/,
-                loader: 'file',
+                loader: 'file-loader',
                 query: {
                     name: '[name].[ext]'
                 }
