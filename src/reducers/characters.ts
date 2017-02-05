@@ -1,5 +1,5 @@
 import {CharactersAction} from '../actions/characters';
-import Character from '../model/character';
+import {Character} from '../model/character';
 import {CharacterAction} from '../actions/character';
 
 export const characters = (state: ReadonlyArray<Character> = [], action: CharactersAction) => {

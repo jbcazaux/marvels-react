@@ -1,4 +1,4 @@
-import Character from '../model/character';
+import {Character} from '../model/character';
 import AxiosProvider from '../http/axios-provider';
 import {ThunkActionCreator} from '../index';
 import AxiosXHR = Axios.AxiosXHR;

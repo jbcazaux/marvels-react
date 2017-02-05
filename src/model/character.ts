@@ -1,4 +1,4 @@
-export default class Character {
+export class Character {
     readonly id: number;
     readonly name: string;
     readonly description: string;
@@ -24,9 +24,9 @@ export default class Character {
     };
 
     public static NULL = new Character(0, 'NULL', '', '', [], [], []);
-};
+}
 
-namespace Character {
+export namespace Character {
     export interface Url {
         readonly type: string;
         readonly url: string;

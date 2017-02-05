@@ -1,4 +1,4 @@
-import Character from '../model/character';
+import {Character} from '../model/character';
 
 export interface State {
     readonly characters: ReadonlyArray<Character>;
