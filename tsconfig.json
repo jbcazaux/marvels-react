@@ -21,6 +21,7 @@
   ],
   "exclude": [
     "dist",
-    "node_modules/axios/axios"
+    "node_modules/axios/axios",
+    "__tests__/__mocks__/**/*"
   ]
 }

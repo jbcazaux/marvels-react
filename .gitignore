@@ -6,6 +6,6 @@ target/
 .yarnrc
 *.jsx
 src/**/*.js
-test/**/*.js
+__tests__/**/*.js
 npm-debug.log
 yarn.lock
