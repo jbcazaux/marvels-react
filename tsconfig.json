@@ -17,7 +17,8 @@
   "include": [
     "node_modules/@types/**/index.d.ts",
     "src/**/*",
-    "__tests__/**/*"
+    "__tests__/**/*",
+    "__mocks__/**/*"
   ],
   "exclude": [
     "dist",

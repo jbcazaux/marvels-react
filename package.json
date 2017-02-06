@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --progress",
     "build": "webpack --verbose",
-    "test": "jest"
+    "test": "jest",
+    "test:w": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   "author": "jbcazaux",
   "devDependencies": {
     "@types/axios": "0.9.35",
+    "@types/enzyme": "2.7.2",
     "@types/es6-shim": "0.31.32",
     "@types/history": "2.0.45",
     "@types/jest": "18.1.1",
@@ -28,6 +30,7 @@
     "@types/redux": "3.6.31",
     "@types/redux-thunk": "2.1.31",
     "clean-webpack-plugin": "0.1.15",
+    "enzyme": "2.7.1",
     "es6-shim": "0.35.3",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "file-loader": "0.10.0",
@@ -63,6 +66,9 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx)$"
+    "testRegex": "/__tests__/.*\\.(ts|tsx)$",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif)$": "<rootDir>/__mocks__/file-mock.ts"
+    }
   }
 }
