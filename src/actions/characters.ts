@@ -20,8 +20,8 @@ export const fetchMarvels: (() => Promise<ReadonlyArray<Character>>) =
         .then(data => data.data.results)
         .then((characters: any[]) => characters.map(c => {
             const image = c.thumbnail ? c.thumbnail.path.concat('.').concat(c.thumbnail.extension) : '';
-            const comics = c.comics ? c.comics.items : [];
-            const series = c.series ? c.series.items : [];
+            const comics = c.comics ? c.comics.items.map((item: any) => item.name) : [];
+            const series = c.series ? c.series.items.map((item: any) => item.name) : [];
             const urls = c.urls.map((url: any) => {
                 return {type: url.type, url: url.url};
             });

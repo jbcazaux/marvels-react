@@ -21,8 +21,8 @@ export const fetchMarvel: ((id: number) => Promise<Character>) =
         .then(results => results.length === 1 ? results[0] : Promise.reject('Not a single result'))
         .then((c: any) => {
             const image = c.thumbnail ? c.thumbnail.path.concat('.').concat(c.thumbnail.extension) : '';
-            const comics = c.comics ? c.comics.items : [];
-            const series = c.series ? c.series.items : [];
+            const comics = c.comics ? c.comics.items.map((item: any) => item.name) : [];
+            const series = c.series ? c.series.items.map((item: any) => item.name) : [];
             const urls = c.urls.map((url: any) => {
                 return {type: url.type, url: url.url};
             });
